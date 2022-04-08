@@ -1,0 +1,29 @@
+$black: #000;
+$white: #F8F8F8;
+$light: #FDFDFD;
+
+@mixin clearfix {
+    &:after {
+      display: table;
+      clear: both;
+      content:'';
+    }
+}
+
+@mixin breakpoint($point) {
+    @if $point == xl {
+        @media (max-width: 1200px) {@content;}
+    }
+    @else if $point == lg {
+        @media (max-width: 992px) {@content;}
+    }
+    @else if $point == md {
+        @media (max-width: 768px) {@content;}
+    }
+    @else if $point == ms {
+        @media (max-width: 576px) {@content;}
+    }
+    @else if $point == xs {
+        @media (max-width: 360px) {@content;}
+    }
+}
